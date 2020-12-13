@@ -9,7 +9,7 @@ async function bootstrap() {
   // app.useWebSocketAdapter(new RedisIoAdapter(app));
   app.useStaticAssets(join(__dirname, '..', 'resource'));
   const port = parseInt(process.env.SERVER_PORT);
-  await app.listen(port);
+  await app.listen(process.env.SERVER_PORT||3000);
 }
 
 bootstrap();
